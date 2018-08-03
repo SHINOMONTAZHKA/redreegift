@@ -1,0 +1,27 @@
+/* mobile */
+@media only screen and (max-width: 560px) {
+
+}
+
+/* laptop */
+
+@media only screen  and (max-width: 1280px) {
+	.middle-content__main-carts {
+		flex-wrap: wrap;
+	}
+	.footer {
+		margin-top: 50px;
+	}
+}
+
+@media only screen  and (max-width: 1440px) {
+
+}
+
+/* iPad */
+
+@media only screen  and (max-width: 1024px) {
+	.middle-content__main-carts {
+		flex-wrap: wrap;
+	}
+}
