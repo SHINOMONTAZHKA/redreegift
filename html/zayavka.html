@@ -4,23 +4,23 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/media.css">
 	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<link rel="stylesheet" href="../css/jquery-ui.css">
 	<title>redree.gift</title>
 </head>
 <body>
-	
 
 	<div class="container flex page-zayavka">
 		<header class="header flex">
-			<div class="logo-wrapper">
-				<a href="index.html" >
+			<div class="logo-wrapper flex">
+				<a href="index.html">
 					<img src="../images/logo.svg" alt="">
 				</a>
-			</div>
-			<div class="header-title">
-				<h2>Подача заявки</h2>
+				<div class="header-title flex">
+					<h2>Подача заявки</h2>
+				</div>
 			</div>
 			<div class="exit-wrapper">
 				<a href="" class="flex">
@@ -32,26 +32,26 @@
 		<div class="middle-content-wrapper flex">
 			<div class="middle-content__step flex">
 				<div class="middle-conten__item-nextStep">
-					<a href="" class="step-caption active">Условия акции</a>
+					<span class="step-caption active line-through">Условия акции</span>
 				</div>
 				<div class="middle-conten__item-nextStep">
-					<a href="" class="step-caption">Выбор тарифа</a>
+					<span class="step-caption">Выбор тарифа</span>
 				</div>
 				<div class="middle-conten__item-nextStep">
-					<a href="" class="step-caption">Контактная информация</a>
+					<span class="step-caption">Контактная информация</span>
 				</div>
 				<div class="middle-conten__item-nextStep">
-					<a href="" class="step-caption">Финал</a>
+					<span class="step-caption">Финал</span>
 				</div>
 			</div>
 			<div class="middle-content__main flex">
-				<div class="middle-content__main-item active">
+				<div class="middle-content__main-item flex active">
 					<div class="middle-content__main-condition-sale">
 						<h2>Условия акции</h2>
 						<p>После заполения формы вы должны внести аванс в размере одной тысячи рублей для того чтоб мы приступили к работе, после оплаты на вашу электронную почту придёт логин и пароль для входа в личный кабинет где вы сможете отследить свой заказ и внести все нужные корректировки. Мы предоставляем вам несколько вариантов логотипа в зависимости от тарифа выбранного вами и соответствующее колличество правок. После утверждения вы указываете стоимость в которую вы его оценили итоговый вариант и указываете стоимость которую можете доплатить поверх одной тысячи рублей который были внесены в виде аванса.</p>
 					</div>
 					<div class="wrapStepButton">
-						<a href="" class="faketaxi"></a>
+						<a href="" class="button"></a>
 						<label for="tes" class="checkbox flex">
 							<input type="checkbox" id="tes">
 							<p class="checked"></p>
@@ -59,7 +59,7 @@
 						</label>
 					</div>
 				</div>
-				<div class="middle-content__main-item">
+				<div class="middle-content__main-item flex">
 					<div class="middle-content__main-carts flex">
 						<div class="middle-content__main-carts__cart flex">
 							<div class="flex"><h2>Старт</h2><h2>500.-</h2></div>
@@ -132,6 +132,39 @@
 								Премиум - идеальный вариант  для бизнеса практически любой категории и сферы. Оптимальный вариант для быстрого старта и закрепления на рынке.
 							</p>
 							<div class="button">Выбрать</div>
+						</div>
+					</div>
+				</div>
+				<div class="middle-content__main-item flex">
+					<form action="" class="flex" id="form-contact">
+						<div class="middle-content__form-item flex">
+							<input type="text" placeholder="Имя Фамилия">
+							<input type="email" placeholder="Email">
+							<input type="text" placeholder="Номер телефона">
+							<input type="text" placeholder="Название компании">
+						</div>
+						<div class="middle-content__form-item flex">
+							<textarea name="" id="" placeholder="Ваши пожелания по логотипу"></textarea>
+							<button class="button">Отправить заявку</button>
+						</div>
+					</form>
+				</div>
+				<div class="middle-content__main-item flex">
+					<div class="wrapper-middle-content__oplata--info flex">
+						<div class="middle-content__oplata--info flex">
+							<h1 class="caption-h1">Оплата тарифа</h1>
+							<p>Имя Фамилия: <span>Константин Константинов</span></p>
+							<p>Email: <span>urod@mail.ru</span></p>
+							<p>Телефон: <span>+ 7(999) 444 - 5231</span></p>
+							<p>Название компании: <span>RedreeSpace</span></p>
+							<p>Задача: <br>
+								<span>
+									Восприятие марки раскручивает рекламный клаттер. Тактика выстраивания отношений с коммерсчекими агентами порождена временем. Более того, баланс спроса и предложения неестественно создает комплексный анализ ситуации. 
+								</span>
+							</p>
+						</div>
+						<div class="middle-content__oplata--selTarif flex">
+							<h3>Ваш тарифный план:</h3>
 						</div>
 					</div>
 				</div>

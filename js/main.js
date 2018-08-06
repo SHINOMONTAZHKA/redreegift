@@ -14,32 +14,79 @@ $( function() {
 
 $( function () {
 	var nextStepButton = $(".nextStepButton"),
-		faketaxi = $(".faketaxi"),
+		button = $(".button"),
 		stepCaption = $(".middle-conten__item-nextStep .step-caption"),
 		stepItemActive = $(".middle-content__main-item.active"),
 		stepItem = $(".middle-content__main-item"),
 		stepItemCur = 0,
 		i = 0;
 
-		faketaxi.on("click", function (e) {
-			e.preventDefault();
-			$(".checkbox").trigger("click");
+		if (stepCaption.length) {
+			$(".step-caption").on("click", function () {
+				if ($(this).hasClass("active")) {
+					stepCaption.removeClass("not");
+				} else {
+					$(this).addClass("not");
+				}
 				setTimeout(function () {
-					stepItemActive.animate({
-						left: "-50%",
-						opacity: "0",
-					}, 600, function () {
-						$(this).remove();
-					});
+					stepCaption.removeClass("not");
+				}, 800);
+			})
+		}
 
-					stepCaption[i].classList.remove("active");
-				     i = i + 1;
-				     
-				     if(i >= stepCaption.length){
-				         i = 0;
-				     }
+		if (stepCaption.length) {
+			button.on("click", function (e) {
+				e.preventDefault();
+				$(".checkbox").trigger("click");
+					setTimeout(function () {
+						stepCaption[i].classList.remove("active");
+					     i = i + 1;
+					     
+					     if(i >= stepCaption.length){
+					         i = 0;
+					     }
 
-				     stepCaption[i].classList.add("active");
-				}, 200)
-		})
+
+					    stepCaption[i].classList.add("active");
+					    stepCaption[i].classList.add("line-through");
+						stepItem[stepItemCur].classList.remove("active");
+					    stepItemCur = stepItemCur + 1;
+					     
+					    if(stepItemCur >= stepItem.length){
+					        stepItemCur = 0;
+					    }
+
+					    stepItem[stepItemCur].classList.add("active");
+
+
+					    var heightStepItemActive = $(stepItem[stepItemCur]).height();
+					    $(".page-zayavka .middle-content__main").css({
+					    	minHeight: heightStepItemActive
+					    });
+					}, 300)
+
+				if ($(this).parent().hasClass("middle-content__main-carts__cart")) {
+					var el = ($(this).parent());
+					setTimeout(function () {
+						$(".middle-content__oplata--selTarif h3").after(el);
+						el.addClass("idealcart");
+						el.find(".button").text("Перейти к оплате");
+					},1000)
+				}
+
+			})
+		}
+			
+});
+
+$(function () {
+	if (window.matchMedia("(max-width: 500px)").matches) {
+		var wrapElement = $(".middle-content-wrapper"),
+			dragElement = $(".drag-wrapper__step");
+		dragElement.draggable({ 
+			containment: wrapElement,
+			axis: "x"
+		});
+
+	}
 });
